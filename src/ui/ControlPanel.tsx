@@ -60,10 +60,6 @@ export function ControlPanel({
     const mu1Vals = samples.map((s) => s.params.mu1).sort((a, b) => a - b);
     const mu2Vals = samples.map((s) => s.params.mu2).sort((a, b) => a - b);
 
-    const probAfternoon = samples.filter((s) => s.params.tau > 12).length / n;
-    const prob2To4 =
-      samples.filter((s) => s.params.tau > 14 && s.params.tau < 16).length / n;
-
     const ci95 = {
       tau: [percentile(tauVals, 2.5), percentile(tauVals, 97.5)] as [number, number],
       mu1: [percentile(mu1Vals, 2.5), percentile(mu1Vals, 97.5)] as [number, number],
@@ -73,8 +69,6 @@ export function ControlPanel({
     return {
       mean,
       ci95,
-      probabilityAfternoon: probAfternoon,
-      probability2To4: prob2To4,
     };
   }, [state.acceptedSamples]);
 
@@ -145,7 +139,6 @@ export function ControlPanel({
             estimates={estimates}
             data={state.data}
             trueParams={state.config.trueParams}
-            knownSigma={state.config.knownSigma}
           />
         )}
 

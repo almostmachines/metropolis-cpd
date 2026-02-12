@@ -8,19 +8,15 @@ interface ResultsDisplayProps {
       mu1: [number, number];
       mu2: [number, number];
     };
-    probabilityAfternoon: number;
-    probability2To4: number;
   };
   data: DataPoint[];
   trueParams: Params;
-  knownSigma: number;
 }
 
 export function ResultsDisplay({
   estimates,
   data,
   trueParams,
-  knownSigma,
 }: ResultsDisplayProps) {
   const chartWidth = 320;
   const chartHeight = 180;
@@ -309,23 +305,6 @@ export function ResultsDisplay({
         </table>
       </div>
 
-      <div className="rounded-md border border-slate-800 bg-slate-900/55 p-2 text-xs text-slate-300 space-y-1">
-        <div>
-          P(change in afternoon, τ {'>'} 12h):{' '}
-          <span className="text-cyan-300">
-            {(estimates.probabilityAfternoon * 100).toFixed(1)}%
-          </span>
-        </div>
-        <div>
-          P(14h {'<'} τ {'<'} 16h):{' '}
-          <span className="text-cyan-300">
-            {(estimates.probability2To4 * 100).toFixed(1)}%
-          </span>
-        </div>
-        <div className="text-slate-500">
-          Known sigma in likelihood: {knownSigma.toFixed(3)}
-        </div>
-      </div>
     </div>
   );
 }
