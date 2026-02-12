@@ -7,9 +7,7 @@ interface ResultsDisplayProps {
       tau: [number, number];
       mu1: [number, number];
       mu2: [number, number];
-      effectSize: [number, number];
     };
-    effectSizeMean: number;
     probabilityAfternoon: number;
     probability2To4: number;
   };
@@ -81,12 +79,6 @@ export function ResultsDisplay({
       mean: estimates.mean.mu2,
       ci: estimates.ci95.mu2,
       trueValue: trueParams.mu2,
-    },
-    {
-      label: 'Effect (mg/L)',
-      mean: estimates.effectSizeMean,
-      ci: estimates.ci95.effectSize,
-      trueValue: trueParams.mu2 - trueParams.mu1,
     },
   ];
 

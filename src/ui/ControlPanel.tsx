@@ -59,9 +59,6 @@ export function ControlPanel({
     const tauVals = samples.map((s) => s.params.tau).sort((a, b) => a - b);
     const mu1Vals = samples.map((s) => s.params.mu1).sort((a, b) => a - b);
     const mu2Vals = samples.map((s) => s.params.mu2).sort((a, b) => a - b);
-    const effectVals = samples
-      .map((s) => s.params.mu2 - s.params.mu1)
-      .sort((a, b) => a - b);
 
     const probAfternoon = samples.filter((s) => s.params.tau > 12).length / n;
     const prob2To4 =
@@ -71,16 +68,11 @@ export function ControlPanel({
       tau: [percentile(tauVals, 2.5), percentile(tauVals, 97.5)] as [number, number],
       mu1: [percentile(mu1Vals, 2.5), percentile(mu1Vals, 97.5)] as [number, number],
       mu2: [percentile(mu2Vals, 2.5), percentile(mu2Vals, 97.5)] as [number, number],
-      effectSize: [
-        percentile(effectVals, 2.5),
-        percentile(effectVals, 97.5),
-      ] as [number, number],
     };
 
     return {
       mean,
       ci95,
-      effectSizeMean: mean.mu2 - mean.mu1,
       probabilityAfternoon: probAfternoon,
       probability2To4: prob2To4,
     };
