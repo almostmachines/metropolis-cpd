@@ -77,7 +77,7 @@ export function ControlPanel({
 
   return (
     <div className="w-full md:w-[450px] shrink-0 bg-slate-800/50 border-t md:border-t-0 md:border-l border-slate-700 flex flex-col overflow-y-auto">
-      <div className="p-4 space-y-4">
+      <div className="p-4 pb-17 space-y-4">
         <StepControls
           phase={state.phase}
           acceptanceProbability={
