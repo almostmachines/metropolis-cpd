@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+}
+
+.metropolis-cpd * {
+  box-sizing: border-box;
+}
+
+.metropolis-cpd input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.metropolis-cpd input[type="number"]::-webkit-outer-spin-button,
+.metropolis-cpd input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

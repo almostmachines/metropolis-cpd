@@ -72,7 +72,7 @@ export default function App() {
   }, [config, handleReset]);
 
   return (
-    <div className="h-screen flex flex-col bg-slate-900">
+    <div className="h-full flex flex-col bg-slate-900">
       <header className="shrink-0 px-4 py-3 border-b border-slate-700 bg-slate-800/50">
         <h1 className="text-lg font-bold text-slate-100">
           Metropolis Algorithm: Bayesian Change-Point Detection
