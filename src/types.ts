@@ -32,7 +32,7 @@ export interface AlgorithmConfig {
 }
 
 export const DEFAULT_CONFIG: AlgorithmConfig = {
-  totalSamples: 2000,
+  totalSamples: 4000,
   burnInSamples: 0,
   observationCount: 300,
   knownSigma: 0.9,
